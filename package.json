@@ -1,0 +1,31 @@
+{
+  "name": "schema-espace-presse",
+  "version": "0.1.0",
+  "description": "Contrat d'interface entre le SIG et les ministères pour l'échange de contenus éditoriaux à destination de la presse.",
+  "homepage": "https://github.com/GouvernementFR/schema-espace-presse#readme",
+  "bugs": {
+    "url": "https://github.com/GouvernementFR/schema-espace-presse/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GouvernementFR/schema-espace-presse.git"
+  },
+  "license": "Etalab-2.0",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test-schema": "node bin/validate.js schema.json",
+    "test-data-valid": "node bin/validate.js schema.json tests/valid/",
+    "test-data-invalid": "node bin/validate.js schema.json tests/invalid/"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "ajv-keywords": "^5.1.0"
+  },
+  "devDependencies": {}
+}

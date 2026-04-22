@@ -1,0 +1,64 @@
+name: JSON Schema Validation CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate schema and data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate JSON Schema
+        run: |
+          mkdir -p reports
+          echo "Validating schema..."
+          node bin/validate.js --schema schema.json --report reports/schema-report.json
+        continue-on-error: false
+
+      - name: Validate valid test files
+        run: |
+          mkdir -p reports/valid
+          for file in tests/valid/*.jsonl; do
+            report="reports/valid/$(basename "$file")-report.json"
+            echo "Validating $file (should pass)..."
+            node bin/validate.js --schema schema.json --data "$file" --report "$report"
+          done
+        continue-on-error: false
+
+      - name: Validate invalid test files
+        run: |
+          mkdir -p reports/invalid
+          for file in tests/invalid/*.jsonl; do
+            report="reports/invalid/$(basename "$file")-report.json"
+            echo "Validating $file (should fail)..."
+            set +e
+            node bin/validate.js --schema schema.json --data "$file" --report "$report"
+            status=$?
+            set -e
+            if [ $status -eq 0 ]; then
+              echo "ERROR: $file should be invalid but returned code 0"
+              exit 1
+            fi
+          done
+        continue-on-error: false
+
+      - name: Upload all reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-reports
+          path: reports/
