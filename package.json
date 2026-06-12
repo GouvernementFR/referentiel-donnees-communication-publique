@@ -18,9 +18,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test-schema": "node bin/validate.js schema.json",
-    "test-data-valid": "node bin/validate.js schema.json tests/valid/",
-    "test-data-invalid": "node bin/validate.js schema.json tests/invalid/"
+    "test-schema": "node bin/validate.js communiques-de-presse/schema.json",
+    "test-data-valid": "node bin/validate.js communiques-de-presse/schema.json tests/valid/",
+    "test-data-invalid": "node bin/validate.js communiques-de-presse/schema.json tests/invalid/"
   },
   "dependencies": {
     "ajv": "^8.17.1",

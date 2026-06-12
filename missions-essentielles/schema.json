@@ -1,0 +1,108 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.data.gouv.fr/sig/schema-missions-essentielles/schema.json",
+    "title": "Missions essentielles de l'État",
+    "description": "Schéma décrivant les six missions essentielles de l'État et leurs objets de communication interministérielle.",
+    "type": "object",
+    "required": ["metadata", "missions"],
+    "additionalProperties": false,
+    "properties": {
+
+        "metadata": {
+            "type": "object",
+            "required": ["titre", "description", "editeur", "licence", "date_publication", "date_mise_a_jour", "version"],
+            "additionalProperties": false,
+            "properties": {
+                "titre": { "type": "string" },
+                "description": { "type": "string" },
+                "editeur": { "type": "string" },
+                "licence": { "type": "string" },
+                "date_publication": { "type": "string", "format": "date" },
+                "date_mise_a_jour": { "type": "string", "format": "date" },
+                "version": { "type": "string" },
+                "contact": { "type": ["string", "null"] }
+            }
+        },
+
+        "missions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["id", "position", "libelle", "couleur", "couleur_hexadecimal", "objets"],
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Identifiant technique de la mission."
+                    },
+                    "position": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "description": "Numéro d'ordre de la mission."
+                    },
+                    "libelle": {
+                        "type": "string",
+                        "description": "Libellé officiel de la mission."
+                    },
+                    "couleur": {
+                        "type": "string",
+                        "description": "Nom de la couleur associée à la mission."
+                    },
+                    "couleur_hexadecimal": {
+                        "type": "string",
+                        "pattern": "^#[0-9a-fA-F]{6}$",
+                        "description": "Code hexadécimal de la couleur préfixé par #."
+                    },
+                    "objets": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": ["id", "libelle", "menants_id"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Identifiant technique de l'objet."
+                                },
+                                "libelle": {
+                                    "type": "string",
+                                    "description": "Libellé officiel de l'objet."
+                                },
+                                "description": {
+                                    "type": ["string", "null"],
+                                    "description": "Description détaillée de l'objet."
+                                },
+                                "menants_id": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    },
+                                    "description": "UUID des ministères pilotes, issus de gouvernements-et-ministeres.json."
+                                },
+                                "id_co_menants_id": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    },
+                                    "description": "UUID des ministères co-pilotes, issus de gouvernements-et-ministeres.json. Optionnel."
+                                },
+                                "concourants_id": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    },
+                                    "description": "UUID des ministères contributeurs, issus de gouvernements-et-ministeres.json. Optionnel."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

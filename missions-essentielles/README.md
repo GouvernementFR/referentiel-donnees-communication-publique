@@ -1,19 +1,12 @@
-# Missions essentielles de l'État — `missions-essentielles.json`
-
 Ce jeu de données décrit les six missions essentielles de l'État, telles que définies par le Service d'information du Gouvernement (SIG). Chaque mission se décline en objets de communication interministérielle.
-
-- Contributeur : Service d'information du Gouvernement (SIG)
-- Schéma créé le : 22/04/2026
-- Mise à jour : ponctuelle
-- Version : 0.1.0
 
 ## Contexte
 
-Les six missions essentielles de l'État sont six grands champs d'action construits à partir des attentes des Français et en lien avec les directions de communications des ministères. Elles servent à :
+Les six missions essentielles de l'État sont six grands champs d'action construits à partir des attentes des Français et en lien avec les directions de communication des ministères. Elles servent à :
 
-- Donner aux citoyens une grille de lecture simple de l'action publique ;
-- Offrir aux communicants de l'État un cadre commun pour formuler leurs messages ;
-- Structurer une expression cohérente de la marque État sur le long terme.
+- Donner aux citoyens une grille de lecture simple de l'action publique
+- Offrir aux communicants de l'État un cadre commun pour formuler leurs messages
+- Structurer une expression cohérente de la marque État sur le long terme
 
 Elles se matérialisent dans un livre de marque partagé à l'ensemble de la filière communication de l'État, qui explique comment l'État agit et pour répondre à quelles attentes des Français.
 
@@ -23,27 +16,27 @@ L'objectif est de permettre aux Français d'identifier dans leur quotidien comme
 
 - Ce référentiel couvre les 6 missions essentielles de l'État et leurs objets de communication interministérielle
 - Les UUID sont attribués à la création et ne changent jamais
-- Les missions et les objets ne sont **pas liés techniquement** : un objet référence l'ID court de sa mission parente (`id_mission_rattachee`) mais sans contrainte technique forte, afin de préserver la flexibilité du référentiel
-- Ce référentiel évolue indépendamment du calendrier politique mais est sujet aux changements de gouvernement dans le cadre de la création ou suppression de ministères.
+- Les missions et les objets ne sont **pas liés techniquement** : un objet référence l'ID court de sa mission parente (`id_mission_rattachee`) sans contrainte technique forte, afin de préserver la flexibilité du référentiel
+- Ce référentiel évolue indépendamment du calendrier politique mais est sujet aux changements de gouvernement dans le cadre de la création ou suppression de ministères
 
 ## Les 6 missions essentielles
 
-| # | UUID | ID court | Libellé | Couleur | Hex |
-| --- | --- | --- | --- | --- | --- |
-| 1 | ⏳ Mise à disposition la semaine du 18 mai | `1_organiser` | Organiser le fonctionnement du pays, la vie démocratique et établir la loi | Bleu Océan | `#3476cb` |
-| 2 | ⏳ Mise à disposition la semaine du 18 mai | `2_proteger` | Protéger les citoyens, leur santé et leur cadre de vie | Rose Guimauve | `#c1498d` |
-| 3 | ⏳ Mise à disposition la semaine du 18 mai | `3_accompagner` | Accompagner efficacement les citoyens au quotidien et garantir l'accès aux services publics | Orange Caramel | `#fd9938` |
-| 4 | ⏳ Mise à disposition la semaine du 18 mai | `4_consolider` | Consolider le pays et préparer son avenir : investir pour le bien commun, former les citoyens de demain, accompagner les transitions | Vert Émeraude | `#3d816d` |
-| 5 | ⏳ Mise à disposition la semaine du 18 mai | `5_favoriser` | Favoriser une économie forte et durable pour le pays | Jaune Moutarde | `#f2ca46` |
-| 6 | ⏳ Mise à disposition la semaine du 18 mai | `6_defendre` | Défendre et promouvoir la France sur la scène internationale | Ocre Cannelle | `#ad6055` |
+| # | ID | Libellé | Couleur | Hex |
+| --- | --- | --- | --- | --- |
+| 1 | `1_organiser` | Organiser le fonctionnement du pays, la vie démocratique et établir la loi | Bleu Océan | `#3476cb` |
+| 2 | `2_proteger` | Protéger les citoyens, leur santé et leur cadre de vie | Rose Guimauve | `#c1498d` |
+| 3 | `3_accompagner` | Accompagner efficacement les citoyens au quotidien et garantir l'accès aux services publics | Orange Caramel | `#fd9938` |
+| 4 | `4_consolider` | Consolider le pays et préparer son avenir : investir pour le bien commun, former les citoyens de demain, accompagner les transitions | Vert Émeraude | `#3d816d` |
+| 5 | `5_favoriser` | Favoriser une économie forte et durable pour le pays | Jaune Moutarde | `#f2ca46` |
+| 6 | `6_defendre` | Défendre et promouvoir la France sur la scène internationale | Ocre Cannelle | `#ad6055` |
 
 ## Référentiel des ministères
 
-Les UUID des ministères sont issus de `ministeres.json`, publié sur [data.gouv.fr](https://www.data.gouv.fr/).
+Les UUID des ministères sont issus de `gouvernements-et-ministeres.json` (`gouvernements[].ministeres[]`).
 
 ## Les objets de communication interministérielle
 
-| ID objet | Libellé long | Mission rattachée | Rôle | Ministère |
+| ID objet | Libellé | Mission rattachée | Rôle | Ministère |
 | --- | --- | --- | --- | --- |
 | `1A_engagement_citoyen` | L'engagement citoyen et les campagnes d'incitation au vote | `1_organiser` | Menant | Premier ministre |
 | `1A_engagement_citoyen` | L'engagement citoyen et les campagnes d'incitation au vote | `1_organiser` | Concourant | Ministère de l'Intérieur |
@@ -100,14 +93,14 @@ Les UUID des ministères sont issus de `ministeres.json`, publié sur [data.gouv
 | `2F_narcotrafics` | Le plan de lutte contre les narcotrafics | `2_proteger` | Concourant | Ministère de la Santé, des Familles, de l'Autonomie et des Personnes handicapées |
 | `2F_narcotrafics` | Le plan de lutte contre les narcotrafics | `2_proteger` | Concourant | Ministère du Travail et des Solidarités |
 | `2F_narcotrafics` | Le plan de lutte contre les narcotrafics | `2_proteger` | Concourant | Ministère de l'Économie, des Finances et de la Souveraineté industrielle, énergétique et numérique |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Menant | Premier ministre |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère de la Santé, des Familles, de l'Autonomie et des Personnes handicapées |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère du Travail et des Solidarités |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère de l'Éducation nationale |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère de l'Enseignement supérieur, de la Recherche et de l'Espace |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère de la Justice |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère de l'Agriculture, de l'Agro-alimentaire et de la Souveraineté alimentaire |
-| `2G_sante_mentale` | L'action de l'Etat en matière de santé mentale | `2_proteger` | Concourant | Ministère de la Culture |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Menant | Premier ministre |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère de la Santé, des Familles, de l'Autonomie et des Personnes handicapées |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère du Travail et des Solidarités |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère de l'Éducation nationale |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère de l'Enseignement supérieur, de la Recherche et de l'Espace |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère de la Justice |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère de l'Agriculture, de l'Agro-alimentaire et de la Souveraineté alimentaire |
+| `2G_sante_mentale` | L'action de l'État en matière de santé mentale | `2_proteger` | Concourant | Ministère de la Culture |
 | `2H_gcq` | La promotion des actions individuelles en faveur de la protection de l'environnement (« Chaque geste compte ») | `2_proteger` | Menant | Ministère de la Transition écologique, de la Biodiversité et des Négociations internationales sur le climat et la nature |
 | `2H_gcq` | La promotion des actions individuelles en faveur de la protection de l'environnement (« Chaque geste compte ») | `2_proteger` | Concourant | Ministère de l'Agriculture, de l'Agro-alimentaire et de la Souveraineté alimentaire |
 | `2H_gcq` | La promotion des actions individuelles en faveur de la protection de l'environnement (« Chaque geste compte ») | `2_proteger` | Concourant | Ministère de la Culture |
@@ -173,39 +166,30 @@ Les UUID des ministères sont issus de `ministeres.json`, publié sur [data.gouv
 | `6D_la_reserve` | Le doublement des effectifs de la réserve | `6_defendre` | Menant | Ministère des Armées et des Anciens combattants |
 | `6D_la_reserve` | Le doublement des effectifs de la réserve | `6_defendre` | Concourant | Ministère de l'Intérieur |
 
-## Structure des données
-
-### Mission (`missions[]`)
+## Attributs
 
 | Attribut | Type | Obligatoire | Description | Exemple |
 | --- | --- | --- | --- | --- |
-| `id` | UUID v4 | Oui | Identifiant unique universel. Attribué à la création, ne change jamais. | `"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"` |
-| `numero` | Nombre entier | Oui | Numéro d'ordre de la mission | `1` |
-| `id_court` | Chaîne de caractères | Oui | Identifiant court technique | `"1_organiser"` |
-| `libelle` | Chaîne de caractères | Oui | Libellé long officiel de la mission | `"Organiser le fonctionnement du pays, la vie démocratique et établir la loi"` |
-| `couleur` | Chaîne de caractères | Oui | Nom de la couleur associée à la mission | `"Bleu Océan"` |
-| `hex` | Chaîne de caractères | Oui | Code hexadécimal de la couleur | `"#3476cb"` |
-
-### Objet (`objets[]`)
-
-| Attribut | Type | Obligatoire | Description | Exemple |
-| --- | --- | --- | --- | --- |
-| `id` | Chaîne de caractères | Oui | Identifiant court technique | `"1A_engagement_citoyen"` |
-| `libelle_long` | Chaîne de caractères | Oui | Libellé long officiel de l'objet | `"L'engagement citoyen et les campagnes d'incitation au vote"` |
-| `description` | Chaîne de caractères | Non | Description détaillée de l'objet | `"Ces campagnes visent à renforcer la participation des citoyens..."` |
-| `id_mission_rattachee` | Chaîne de caractères | Oui | ID court de la mission parente | `"1_organiser"` |
-| `uuid_menants` | Tableau d'UUID v4 | Oui | UUID des ministères pilotes (1 à n), issus de `ministeres.json` | `["a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"]` |
-| `uuid_co_menants` | Tableau d'UUID v4 | Non | UUID des ministères co-pilotes (0 à n), issus de `ministeres.json` | `["c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"]` |
-| `uuid_concourants` | Tableau d'UUID v4 | Non | UUID des ministères contributeurs (0 à n), issus de `ministeres.json` | `["d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"]` |
-
-## Contact
-
-Service d'information du Gouvernement (SIG)  - https://www.info.gouv.fr/contact/services-du-premier-ministre?service=275ba149-e350-4077-b47e-b46ab70ab9c3
-
-## Licence
-
-[Licence Ouverte / Open Licence version 2.0](https://www.etalab.gouv.fr/licence-ouverte-open-licence/)
+| `missions[].id` | chaîne | Oui | Identifiant technique | `"1_organiser"` |
+| `missions[].position` | entier | Oui | Numéro d'ordre de la mission | `1` |
+| `missions[].libelle` | chaîne | Oui | Libellé officiel de la mission | `"Organiser le fonctionnement du pays, la vie démocratique et établir la loi"` |
+| `missions[].couleur` | chaîne | Oui | Nom de la couleur associée à la mission | `"Bleu Océan"` |
+| `missions[].couleur_hexadecimal` | chaîne | Oui | Code hexadécimal de la couleur préfixé par un # | `"#3476cb"` |
+| `missions[].objets[].id` | chaîne | Oui | Identifiant technique | `"1A_engagement_citoyen"` |
+| `missions[].objets[].libelle` | chaîne | Oui | Libellé officiel de l'objet | `"L'engagement citoyen et les campagnes d'incitation au vote"` |
+| `missions[].objets[].description` | chaîne | Non | Description détaillée de l'objet | `"Ces campagnes visent à renforcer la participation des citoyens..."` |
+| `missions[].objets[].menants_id[]` | UUID v4 | Oui | ID des ministères pilotes (1 à n), issus de `gouvernements-et-ministeres.json` | `["a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"]` |
+| `missions[].objets[].id_co_menants_id[]` | UUID v4 | Non | ID des ministères co-pilotes (0 à n), issus de `gouvernements-et-ministeres.json` | `["c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"]` |
+| `missions[].objets[].concourants_id[]` | UUID v4 | Non | ID des ministères contributeurs (0 à n), issus de `gouvernements-et-ministeres.json` | `["d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"]` |
 
 ## Données
 
-Le fichier de données `missions-essentielles.json` est disponible sur [data.gouv.fr](https://www.data.gouv.fr/).
+Le fichier `missions-essentielles.json` est disponible sur data.gouv.fr.
+
+## Contact
+
+Service d'information du Gouvernement (SIG) - https://www.info.gouv.fr/contact/services-du-premier-ministre?service=275ba149-e350-4077-b47e-b46ab70ab9c3
+
+## Licence
+
+Licence Ouverte / Open Licence version 2.0

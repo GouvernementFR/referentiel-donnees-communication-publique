@@ -1,0 +1,108 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.data.gouv.fr/sig/schema-gouvernements-et-ministeres/schema.json",
+    "title": "Composition des Gouvernements",
+    "description": "Schéma décrivant la composition officielle du Gouvernement en exercice et l'historique des gouvernements précédents.",
+    "type": "object",
+    "required": ["metadata", "gouvernements"],
+    "additionalProperties": false,
+    "properties": {
+
+        "metadata": {
+            "type": "object",
+            "required": ["titre", "description", "editeur", "licence", "date_publication", "date_mise_a_jour", "version"],
+            "additionalProperties": false,
+            "properties": {
+                "titre": { "type": "string" },
+                "description": { "type": "string" },
+                "editeur": { "type": "string" },
+                "licence": { "type": "string" },
+                "date_publication": { "type": "string", "format": "date" },
+                "date_mise_a_jour": { "type": "string", "format": "date" },
+                "version": { "type": "string" },
+                "contact": { "type": ["string", "null"] }
+            }
+        },
+
+        "gouvernements": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["id", "nom", "date_debut", "ministeres"],
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "description": "Identifiant unique universel du gouvernement."
+                    },
+                    "nom": {
+                        "type": "string",
+                        "description": "Nom officiel du Gouvernement."
+                    },
+                    "date_debut": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "Date de formation correspondant au décret."
+                    },
+                    "date_fin": {
+                        "type": ["string", "null"],
+                        "format": "date",
+                        "description": "Date de fin. null tant que le Gouvernement est en exercice."
+                    },
+                    "ministeres": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": ["id", "nom", "ordre_ministere", "personnalites"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "UUID du ministère dans ce gouvernement."
+                                },
+                                "nom": {
+                                    "type": "string",
+                                    "description": "Intitulé officiel du ministère."
+                                },
+                                "ordre_ministere": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "description": "Position du ministère dans la liste du gouvernement (1 = Premier ministre)."
+                                },
+                                "personnalites": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": ["personnalite_id", "ordre_protocolaire", "ordre_ministeriel"],
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "personnalite_id": {
+                                                "type": "string",
+                                                "format": "uuid",
+                                                "description": "UUID de la personnalité, issu de personnalites.json."
+                                            },
+                                            "ordre_protocolaire": {
+                                                "type": "integer",
+                                                "minimum": 1,
+                                                "description": "Position globale dans le gouvernement (1 = Premier ministre)."
+                                            },
+                                            "ordre_ministeriel": {
+                                                "type": "integer",
+                                                "minimum": 1,
+                                                "description": "Position au sein du ministère de tutelle (1 = ministre principal)."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

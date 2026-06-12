@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.data.gouv.fr/sig/schema-thematiques/schema.json",
+    "title": "Référentiel des thématiques info.gouv.fr",
+    "description": "Schéma décrivant le référentiel officiel des thématiques et sous-thématiques de l'action du Gouvernement.",
+    "type": "object",
+    "required": ["metadata", "thematiques"],
+    "additionalProperties": false,
+    "properties": {
+
+        "metadata": {
+            "type": "object",
+            "required": ["titre", "description", "editeur", "licence", "date_mise_a_jour", "version"],
+            "additionalProperties": false,
+            "properties": {
+                "titre": { "type": "string" },
+                "description": { "type": "string" },
+                "editeur": { "type": "string" },
+                "licence": { "type": "string" },
+                "date_mise_a_jour": { "type": "string", "format": "date" },
+                "version": { "type": "string" }
+            }
+        },
+
+        "thematiques": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["id", "libelle"],
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "description": "Identifiant unique universel de la thématique."
+                    },
+                    "libelle": {
+                        "type": "string",
+                        "description": "Libellé officiel de la thématique."
+                    },
+                    "sous_thematiques": {
+                        "type": "array",
+                        "description": "Sous-thématiques associées.",
+                        "items": {
+                            "type": "object",
+                            "required": ["id", "libelle"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Identifiant unique universel de la sous-thématique. Attribué à la création, ne change jamais."
+                                },
+                                "libelle": {
+                                    "type": "string",
+                                    "description": "Libellé officiel de la sous-thématique."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

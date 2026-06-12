@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p reports
           echo "Validating schema..."
-          node bin/validate.js --schema schema.json --report reports/schema-report.json
+          node bin/validate.js --schema communiques-de-presse/schema.json --report reports/schema-report.json
         continue-on-error: false
 
       - name: Validate valid test files
@@ -36,7 +36,7 @@ jobs:
           for file in tests/valid/*.jsonl; do
             report="reports/valid/$(basename "$file")-report.json"
             echo "Validating $file (should pass)..."
-            node bin/validate.js --schema schema.json --data "$file" --report "$report"
+            node bin/validate.js --schema communiques-de-presse/schema.json --data "$file" --report "$report"
           done
         continue-on-error: false
 
@@ -47,7 +47,7 @@ jobs:
             report="reports/invalid/$(basename "$file")-report.json"
             echo "Validating $file (should fail)..."
             set +e
-            node bin/validate.js --schema schema.json --data "$file" --report "$report"
+            node bin/validate.js --schema communiques-de-presse/schema.json --data "$file" --report "$report"
             status=$?
             set -e
             if [ $status -eq 0 ]; then
