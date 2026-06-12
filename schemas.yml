@@ -1,7 +1,19 @@
 title: "Dépôt de référence des schémas de données et de la documentation des jeux de données ouverts"
-description : "Dépôt de référence des schémas de données et de la documentation des jeux de données ouverts publiés par le **Service d'information du Gouvernement (SIG)."
+description : "Dépôt de référence des schémas de données et de la documentation des jeux de données ouverts publiés par le Service d'information du Gouvernement (SIG)."
 homepage: "https://github.com/GouvernementFR/referentiel-donnees-communication-publique"
 schemas:
   -
-    path: "schema.json"
-    title: "Communiqués de presse du Gouvernement"
+    path: "communiques-de-presse/schema.json"
+    title: "Ce schéma de données unifie les pratiques de création d'un communiqué de presse entre les entités du Gouvernement."
+  -
+    path: "gouvernements-et-ministeres/schema.json"
+    title: "Ce schéma décrit la composition officielle du Gouvernement en exercice et l'historique des gouvernements précédents."
+  -
+    path: "missions-essentielles/schema.json"
+    title: "Ce schéma décrit les six missions essentielles de l'État, telles que définies par le Service d'information du Gouvernement (SIG)."
+  -
+    path: "personnalites/schema.json"
+    title: "Ce référentiel décrit les personnalités politiques exerçant ou ayant exercé une fonction au sein du Gouvernement, ainsi que leurs fonctions historisées."
+  -
+    path: "thematiques/schema.json"
+    title: "Ce schéma décrit le référentiel officiel des thématiques et sous-thématiques de l'action du Gouvernement, tel qu'il structure la publication des contenus sur le site info.gouv.fr."

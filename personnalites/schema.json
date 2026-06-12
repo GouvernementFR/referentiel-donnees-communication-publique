@@ -1,0 +1,122 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://schema.data.gouv.fr/sig/schema-personnalites/schema.json",
+    "title": "Personnalités politiques",
+    "description": "Schéma décrivant les personnalités politiques exerçant ou ayant exercé une fonction au sein du Gouvernement, et leurs fonctions historisées.",
+    "type": "object",
+    "required": ["metadata", "personnalites"],
+    "additionalProperties": false,
+    "properties": {
+
+        "metadata": {
+            "type": "object",
+            "required": ["titre", "description", "editeur", "licence", "date_publication", "date_mise_a_jour", "version"],
+            "additionalProperties": false,
+            "properties": {
+                "titre": { "type": "string" },
+                "description": { "type": "string" },
+                "editeur": { "type": "string" },
+                "licence": { "type": "string" },
+                "date_publication": { "type": "string", "format": "date" },
+                "date_mise_a_jour": { "type": "string", "format": "date" },
+                "version": { "type": "string" },
+                "contact": { "type": ["string", "null"] }
+            }
+        },
+
+        "personnalites": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["id", "civilite", "prenom", "nom", "fonctions"],
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "description": "Identifiant unique universel de la personnalité, stable à travers les gouvernements."
+                    },
+                    "civilite": {
+                        "type": "string",
+                        "enum": ["M.", "Mme"],
+                        "description": "Civilité de la personnalité."
+                    },
+                    "prenom": {
+                        "type": "string",
+                        "description": "Prénom."
+                    },
+                    "nom": {
+                        "type": "string",
+                        "description": "Nom en majuscules (typographie JO)."
+                    },
+                    "fonctions": {
+                        "type": "array",
+                        "minItems": 1,
+                        "description": "Historique des fonctions exercées.",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "gouvernement_id",
+                                "ministere_id",
+                                "intitule_complet",
+                                "intitule_partiel",
+                                "ordre_protocolaire",
+                                "ordre_ministeriel",
+                                "date_debut",
+                                "date_fin"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Identifiant unique universel de la fonction."
+                                },
+                                "gouvernement_id": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "UUID du gouvernement, issu de gouvernements-et-ministeres.json."
+                                },
+                                "ministere_id": {
+                                    "type": ["string", "null"],
+                                    "format": "uuid",
+                                    "description": "UUID du ministère de tutelle, issu de gouvernements-et-ministeres.json. null pour le PM ou un ministre de plein exercice."
+                                },
+                                "intitule_complet": {
+                                    "type": "string",
+                                    "description": "Intitulé complet tel que publié au JO."
+                                },
+                                "intitule_partiel": {
+                                    "type": "string",
+                                    "description": "Portion relative au ministère de tutelle."
+                                },
+                                "ordre_protocolaire": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "description": "Position globale dans le gouvernement (1 = Premier ministre)."
+                                },
+                                "ordre_ministeriel": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "description": "Position au sein du ministère de tutelle (1 = ministre principal)."
+                                },
+                                "date_debut": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "description": "Date de nomination correspondant au décret."
+                                },
+                                "date_fin": {
+                                    "type": ["string", "null"],
+                                    "format": "date",
+                                    "description": "Date de fin de fonction. null si fonction en cours."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
