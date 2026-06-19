@@ -51,10 +51,6 @@ Toute administration, collectivité ou acteur tiers souhaitant indexer des conte
 | `thematiques[].sous_thematiques[].id` | UUID v4 | Oui | Identifiant unique universel de la sous-thématique. Attribué à la création, ne change jamais. | "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a" |
 | `thematiques[].sous_thematiques[].libelle` | chaîne de caractères | Oui | Libellé officiel de la sous-thématique | "Retraites" |
 
-## Stabilité des identifiants
-
-Les UUID sont attribués à la création de chaque thématique ou sous-thématique par le SIG. Ils ne sont jamais modifiés ni réattribués, y compris en cas de changement de libellé.
-
 ## Données
 
 Le fichier de données `thematiques.json` est disponible sur data.gouv.fr.

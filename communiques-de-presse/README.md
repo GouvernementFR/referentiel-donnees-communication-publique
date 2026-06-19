@@ -56,7 +56,7 @@ Le `nom` du ministère est figé au moment de la publication. Si un ministère e
 | `document.personnalites[]` | UUID v4 | Oui | ID de la personnalité, issu de `personnalites.json`                                                                       | `"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"` |
 | `document.thematiques[]` | UUID v4 | Oui | ID de la thématique, issu de `thematiques.json` (min. 1)                                                                  | `"c3a1b2d4-e5f6-4789-abcd-ef0123456789"` |
 | `document.sous_thematiques[]` | UUID v4 | Non | ID de la sous-thématique, issu de `thematiques.json`                                                                      | `"a7b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d"` |
-| `document.mission_id` | UUID v4 | Non | ID de la mission essentielle, issu de `missions-essentielles.json`                                                        | `"b7b9c9d0-e1f2-4a3b-4c5d-9b7f3a9b0d1d"` |
+| `document.mission_id` | chaîne  | Non | ID de la mission essentielle, issu de `missions-essentielles.json`                                                        | `"2_proteger"`                             |
 | `document.objet_id` | chaîne | Non | ID court de l'objet de communication interministérielle, issu de `missions-essentielles.json`                             | `"2F_narcotrafics"` |
 | `document.contenu_markdown` | chaîne | Oui | Corps complet au format Markdown                                                                                          |  |
 | `document.contenu_pdf.lien_telechargement` | URL | Oui | URL de téléchargement (HTTPS). Chaque version PDF sera récupérée par info.gouv.fr et mise à disposition sous son domaine. |  |
@@ -82,17 +82,17 @@ L'algorithme de checksum est **SHA-256**. Un maximum de 4 pièces jointes est so
 
 ## Markdown
 
-| Format supportés | Exemple |
-| --- | --- |
-| Heading |  |
-| Paragraph |  |
-| Line break |  |
-| Emphasis (bold & italic) |  |
-| Blockquotes |  |
-| Lists (ul & ol) |  |
-| Horizontal rules |  |
-| Links |  |
-| Escaping Characters |  |
+| Format supportés |
+| --- |
+| Heading |
+| Paragraph |
+| Line break |
+| Emphasis (bold & italic) |
+| Blockquotes |
+| Lists (ul & ol) |
+| Horizontal rules |
+| Links |
+| Escaping Characters |
 
 ## Contact
 

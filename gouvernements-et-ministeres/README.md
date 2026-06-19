@@ -1,5 +1,5 @@
 
-Ce schéma décrit la composition officielle du Gouvernement en exercice **et l'historique des gouvernements précédents** : leur identité, leurs dates, la liste des UUID de personnalités qui les composent, **et la liste de leurs ministères**.
+Ce schéma décrit la composition officielle du Gouvernement en exercice : son identité, ses dates, la liste des UUID de personnalités qui le composent, **et la liste de ses ministères**.
 
 Les détails des personnalités (identité, fonctions) font l’objet d’un référentiel séparé `personnalites.json` .
 
