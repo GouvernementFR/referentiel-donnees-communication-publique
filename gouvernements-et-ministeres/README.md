@@ -41,7 +41,6 @@ Les tableaux `personnalites[]` et `ministeres[]` de cette entrée donnent la lis
 | `metadata.description` | chaîne | Oui | Description du contenu |  |
 | `metadata.editeur` | chaîne | Oui | Organisme responsable | `"SIG"` |
 | `metadata.licence` | chaîne | Oui | Licence applicable | `"Licence Ouverte / Open Licence version 2.0"` |
-| `metadata.date_publication` | date (ISO 8601) | Oui | Date de première publication | `"2026-02-27"` |
 | `metadata.date_mise_a_jour` | date (ISO 8601) | Oui | Date de dernière mise à jour |  |
 | `metadata.version` | chaîne | Oui | Version sémantique du schéma | `"0.2.0"` |
 | `metadata.contact` | chaîne | Non | Email de contact de l'éditeur |  |

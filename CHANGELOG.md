@@ -16,6 +16,7 @@
 - `communiques-de-presse/README.md` : documentation de `contacts_presse[]` mise à jour pour refléter la structure plate ; `mission_id` corrigé en type `chaîne` avec exemple `"2_proteger"` ; `intitule` → `nom` dans la description du bloc co-signature ; accord grammatical ligne `contenu_pdf.lien_telechargement` ; colonne « Exemple » vide supprimée du tableau Markdown
 - `missions-essentielles/README.md` : `id_co_menants_id[]` → `co_menants_id[]` ; suppression du bullet « Les UUID sont attribués à la création et ne changent jamais » ; suppression de la section « Référentiel des ministères »
 - `thematiques/README.md` : suppression de la section « Stabilité des identifiants »
+- Supprimer le champ `date_publications` pour les schémas `gouvernements-et-ministeres/schema.json`, `missions-essentielles/schema.json` et `personnalites/schema.json`
 
 **Données et tests**
 
