@@ -72,6 +72,14 @@
                                     "minimum": 1,
                                     "description": "Position du ministère dans la liste du gouvernement (1 = Premier ministre)."
                                 },
+                                "succede_ministere_id": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "uuid"
+                                    },
+                                    "description": "Identifiant unique universel du ou des ministères auxquels ce ministère succède (renommage, création, fusion, scission)"
+                                },
                                 "personnalites": {
                                     "type": "array",
                                     "items": {

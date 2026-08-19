@@ -3,10 +3,10 @@
         "titre": "Schéma des communiqués de presse du Gouvernement français",
         "description": "Schéma de données unifiant les pratiques de création d'un communiqué de presse entre les entités du Gouvernement.",
         "editeur": "SIG",
-        "licence": "Licence Ouverte / Open Licence version 2.0",
+        "licence": "Licence Ouverte 2.0/Open Licence 2.0",
         "date_publication": "2026-02-27",
-        "date_mise_a_jour": "2026-05-18",
-        "version": "0.2.0",
+        "date_mise_a_jour": "2026-08-19",
+        "version": "0.2.2",
         "contact": "sig@pm.gouv.fr"
     },
     "document": {
@@ -16,8 +16,8 @@
         "type": "communique_de_presse",
         "titre": "Le Gouvernement renforce la lutte contre le narcotrafic",
         "mots_cles": ["narcotrafic", "sécurité intérieure", "police nationale"],
-        "lieu_diffusion": "Paris",
-        "date_diffusion": "2026-03-27",
+        "lieu_publication": "Paris",
+        "date_publication": "2026-03-27",
         "emetteurs": [
             {
                 "ministere_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",

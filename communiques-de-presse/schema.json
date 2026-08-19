@@ -68,13 +68,12 @@
                 "langue",
                 "type",
                 "titre",
-                "lieu_diffusion",
-                "date_diffusion",
+                "lieu_publication",
+                "date_publication",
                 "emetteurs",
                 "personnalites",
                 "thematiques",
-                "contenu_markdown",
-                "contenu_pdf"
+                "contenu_markdown"
             ],
             "additionalProperties": false,
             "properties": {
@@ -98,6 +97,11 @@
                     "enum": ["communique_de_presse", "dossier_de_presse"],
                     "description": "Type de document."
                 },
+                "url": {
+                    "type": "string",
+                    "format": "url",
+                    "description": "URL absolue faisant office de canonical du document presse. Protocole HTTPS."
+                },
                 "titre": {
                     "type": "string",
                     "description": "Titre du communiqué."
@@ -107,14 +111,14 @@
                     "items": { "type": "string" },
                     "description": "Mots-clés libres associés au communiqué. Optionnels."
                 },
-                "lieu_diffusion": {
+                "lieu_publication": {
                     "type": "string",
                     "description": "Lieu d'émission du communiqué. Par convention, 'Paris' lorsqu'il y a plusieurs émetteurs."
                 },
-                "date_diffusion": {
+                "date_publication": {
                     "type": "string",
                     "format": "date",
-                    "description": "Date de diffusion au format ISO 8601 (AAAA-MM-JJ)."
+                    "description": "Date de publication au format ISO 8601 (AAAA-MM-JJ)."
                 },
 
                 "emetteurs": {

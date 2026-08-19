@@ -40,7 +40,7 @@ Les tableaux `personnalites[]` et `ministeres[]` de cette entrée donnent la lis
 | `metadata.titre` | chaîne | Oui | Titre du jeu de données | `"Composition des Gouvernements de la Vème République française"` |
 | `metadata.description` | chaîne | Oui | Description du contenu |  |
 | `metadata.editeur` | chaîne | Oui | Organisme responsable | `"SIG"` |
-| `metadata.licence` | chaîne | Oui | Licence applicable | `"Licence Ouverte / Open Licence version 2.0"` |
+| `metadata.licence` | chaîne | Oui | Licence applicable | `"Licence Ouverte 2.0/Open Licence 2.0"` |
 | `metadata.date_mise_a_jour` | date (ISO 8601) | Oui | Date de dernière mise à jour |  |
 | `metadata.version` | chaîne | Oui | Version sémantique du schéma | `"0.2.0"` |
 | `metadata.contact` | chaîne | Non | Email de contact de l'éditeur |  |
@@ -51,6 +51,7 @@ Les tableaux `personnalites[]` et `ministeres[]` de cette entrée donnent la lis
 | `gouvernements[].ministeres[].id` | UUID v4 | Oui | Identifiant unique universel du ministère dans ce gouvernement | `"f47ac10b-58cc-4372-a567-0e02b2c3d479"` |
 | `gouvernements[].ministeres[].nom` | chaîne | Oui | Intitulé officiel du ministère | `"Ministère de l'Intérieur"` |
 | `gouvernements[].ministeres[].ordre_ministere` | entier | Oui | Position du ministère dans la liste du gouvernement (1 = Premier ministre) | `1` |
+| `gouvernements[].ministeres[].succede_ministere_id[]` | tableau d'UUID v4 | Oui, null si création d’un nouveau ministère qui n’a pas de parent | Identifiant unique universel du ou des ministères auxquels ce ministère succède (renommage, création, fusion, scission) | `["f47ac10b-58cc-4372-a567-0e02b2c3d479"]` |
 | `gouvernements[].ministeres[].personnalites[].personnalite_id` | UUID v4 | Oui | UUID de la personnalité, issu de `personnalites.json` | `"a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"` |
 | `gouvernements[].ministeres[].personnalites[].ordre_protocolaire` | entier | Oui | Position globale dans le gouvernement (1 = Premier ministre) | `1` |
 | `gouvernements[].ministeres[].personnalites[].ordre_ministeriel` | entier | Oui | Position au sein du ministère de tutelle (1 = ministre principal) | `1` |
@@ -61,8 +62,4 @@ Le fichier `gouvernements-et-ministeres.json` est disponible sur data.gouv.fr.
 
 ## Contact
 
-Service d'information du Gouvernement (SIG) - https://www.info.gouv.fr/contact/services-du-premier-ministre?service=275ba149-e350-4077-b47e-b46ab70ab9c3
-
-## Licence
-
-Licence Ouverte / Open Licence version 2.0
+[Service d'information du Gouvernement (SIG)](https://www.info.gouv.fr/contact/services-du-premier-ministre?service=275ba149-e350-4077-b47e-b46ab70ab9c3)
