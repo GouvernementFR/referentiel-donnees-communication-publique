@@ -10,14 +10,13 @@
 
         "metadata": {
             "type": "object",
-            "required": ["titre", "description", "editeur", "licence", "date_publication", "date_mise_a_jour", "version"],
+            "required": ["titre", "description", "editeur", "licence", "date_mise_a_jour", "version"],
             "additionalProperties": false,
             "properties": {
                 "titre": { "type": "string" },
                 "description": { "type": "string" },
                 "editeur": { "type": "string" },
                 "licence": { "type": "string" },
-                "date_publication": { "type": "string", "format": "date" },
                 "date_mise_a_jour": { "type": "string", "format": "date" },
                 "version": { "type": "string" },
                 "contact": { "type": ["string", "null"] }

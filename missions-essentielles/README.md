@@ -15,7 +15,6 @@ L'objectif est de permettre aux Français d'identifier dans leur quotidien comme
 ## Périmètre
 
 - Ce référentiel couvre les 6 missions essentielles de l'État et leurs objets de communication interministérielle
-- Les UUID sont attribués à la création et ne changent jamais
 - Les missions et les objets ne sont **pas liés techniquement** : un objet référence l'ID court de sa mission parente (`id_mission_rattachee`) sans contrainte technique forte, afin de préserver la flexibilité du référentiel
 - Ce référentiel évolue indépendamment du calendrier politique mais est sujet aux changements de gouvernement dans le cadre de la création ou suppression de ministères
 
@@ -29,10 +28,6 @@ L'objectif est de permettre aux Français d'identifier dans leur quotidien comme
 | 4 | `4_consolider` | Consolider le pays et préparer son avenir : investir pour le bien commun, former les citoyens de demain, accompagner les transitions | Vert Émeraude | `#3d816d` |
 | 5 | `5_favoriser` | Favoriser une économie forte et durable pour le pays | Jaune Moutarde | `#f2ca46` |
 | 6 | `6_defendre` | Défendre et promouvoir la France sur la scène internationale | Ocre Cannelle | `#ad6055` |
-
-## Référentiel des ministères
-
-Les UUID des ministères sont issus de `gouvernements-et-ministeres.json` (`gouvernements[].ministeres[]`).
 
 ## Les objets de communication interministérielle
 
@@ -179,7 +174,7 @@ Les UUID des ministères sont issus de `gouvernements-et-ministeres.json` (`gouv
 | `missions[].objets[].libelle` | chaîne | Oui | Libellé officiel de l'objet | `"L'engagement citoyen et les campagnes d'incitation au vote"` |
 | `missions[].objets[].description` | chaîne | Non | Description détaillée de l'objet | `"Ces campagnes visent à renforcer la participation des citoyens..."` |
 | `missions[].objets[].menants_id[]` | UUID v4 | Oui | ID des ministères pilotes (1 à n), issus de `gouvernements-et-ministeres.json` | `["a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"]` |
-| `missions[].objets[].id_co_menants_id[]` | UUID v4 | Non | ID des ministères co-pilotes (0 à n), issus de `gouvernements-et-ministeres.json` | `["c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"]` |
+| `missions[].objets[].co_menants_id[]` | UUID v4 | Non | ID des ministères co-pilotes (0 à n), issus de `gouvernements-et-ministeres.json` | `["c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f"]` |
 | `missions[].objets[].concourants_id[]` | UUID v4 | Non | ID des ministères contributeurs (0 à n), issus de `gouvernements-et-ministeres.json` | `["d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a"]` |
 
 ## Données

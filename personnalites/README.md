@@ -30,7 +30,6 @@ Le tableau `fonctions[]` permet de retracer le parcours gouvernemental d'une per
 | `metadata.description` | chaîne | Oui | Description du référentiel |  |
 | `metadata.editeur` | chaîne | Oui | Organisme responsable | `"SIG"` |
 | `metadata.licence` | chaîne | Oui | Licence applicable | `"Licence Ouverte / Open Licence version 2.0"` |
-| `metadata.date_publication` | date (ISO 8601) | Oui | Date de première publication | `"2026-04-28"` |
 | `metadata.date_mise_a_jour` | date (ISO 8601) | Oui | Date de dernière mise à jour |  |
 | `metadata.version` | chaîne | Oui | Version sémantique du schéma | `"0.1.0"` |
 | `metadata.contact` | chaîne | Non | Email de contact de l'éditeur |  |

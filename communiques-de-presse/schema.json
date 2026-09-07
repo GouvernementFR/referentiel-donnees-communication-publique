@@ -175,8 +175,7 @@
 
                 "mission_id": {
                     "type": ["string", "null"],
-                    "format": "uuid",
-                    "description": "UUID de la mission essentielle associée, issu de missions-essentielles.json. Optionnel."
+                    "description": "ID de la mission essentielle associée, issu de missions-essentielles.json. Optionnel."
                 },
 
                 "objet_id": {

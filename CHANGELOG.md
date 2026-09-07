@@ -1,3 +1,28 @@
+## [0.2.1] - 2026-06-19
+
+### Modifié
+
+**Schéma des communiqués de presse (`communiques-de-presse/schema.json`)**
+
+- `document.contacts_presse[]` : structure aplatie. Suppression du groupement par entité (`entite`, `ministere_id`, `gouvernement_id`, `contacts[]`) introduit en 0.2.0. Chaque contact est désormais un objet direct dans le tableau, avec `civilite`, `nom`, `fonction`, `email`, `telephone`, `lien_formulaire`, `adresse_physique`, `adresse_postale`. Au moins un champ parmi `email`, `telephone` et `lien_formulaire` est obligatoire par contact (`anyOf`).
+- `document.mission_id` : type corrigé de `uuid` en `chaîne` libre (les missions essentielles utilisent des identifiants techniques comme `"2_proteger"`, pas des UUID)
+
+### Corrigé
+
+**Documentation**
+
+- `README.md` : titre du dépôt corrigé en « Référentiel de données de communication publique » ; suppression de « et historique des gouvernements précédents » dans la description du référentiel Gouvernements
+- `gouvernements-et-ministeres/README.md` : suppression de « et l'historique des gouvernements précédents » dans l'introduction
+- `communiques-de-presse/README.md` : documentation de `contacts_presse[]` mise à jour pour refléter la structure plate ; `mission_id` corrigé en type `chaîne` avec exemple `"2_proteger"` ; `intitule` → `nom` dans la description du bloc co-signature ; accord grammatical ligne `contenu_pdf.lien_telechargement` ; colonne « Exemple » vide supprimée du tableau Markdown
+- `missions-essentielles/README.md` : `id_co_menants_id[]` → `co_menants_id[]` ; suppression du bullet « Les UUID sont attribués à la création et ne changent jamais » ; suppression de la section « Référentiel des ministères »
+- `thematiques/README.md` : suppression de la section « Stabilité des identifiants »
+- Supprimer le champ `date_publications` pour les schémas `gouvernements-et-ministeres/schema.json`, `missions-essentielles/schema.json` et `personnalites/schema.json`
+
+**Données et tests**
+
+- `exemple-valide.json` : `contacts_presse[]` mis à jour vers la structure plate ; `mission_id` corrigé de UUID en `"2_proteger"`
+- `tests/valid/*.jsonl` : fichiers de test mis à jour pour correspondre à la structure `{metadata, document}`, à la structure plate de `contacts_presse[]` et à la valeur `"2_proteger"` pour `mission_id`
+
 ## [0.2.0] - 2026-06-15
 
 ### Ajouté
