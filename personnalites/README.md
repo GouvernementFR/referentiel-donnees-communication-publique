@@ -29,7 +29,7 @@ Le tableau `fonctions[]` permet de retracer le parcours gouvernemental d'une per
 | `metadata.titre` | chaîne | Oui | Titre du jeu de données | `"Personnalités politiques"` |
 | `metadata.description` | chaîne | Oui | Description du référentiel |  |
 | `metadata.editeur` | chaîne | Oui | Organisme responsable | `"SIG"` |
-| `metadata.licence` | chaîne | Oui | Licence applicable | `"Licence Ouverte / Open Licence version 2.0"` |
+| `metadata.licence` | chaîne | Oui | Licence applicable | `"Licence Ouverte 2.0/Open Licence 2.0"` |
 | `metadata.date_mise_a_jour` | date (ISO 8601) | Oui | Date de dernière mise à jour |  |
 | `metadata.version` | chaîne | Oui | Version sémantique du schéma | `"0.1.0"` |
 | `metadata.contact` | chaîne | Non | Email de contact de l'éditeur |  |
@@ -54,8 +54,4 @@ Le fichier `personnalites.json` est disponible sur data.gouv.fr.
 
 ## Contact
 
-Service d'information du Gouvernement (SIG) - https://www.info.gouv.fr/contact/services-du-premier-ministre?service=275ba149-e350-4077-b47e-b46ab70ab9c3
-
-## Licence
-
-Licence Ouverte / Open Licence version 2.0
+[Service d'information du Gouvernement (SIG)](https://www.info.gouv.fr/contact/services-du-premier-ministre?service=275ba149-e350-4077-b47e-b46ab70ab9c3)

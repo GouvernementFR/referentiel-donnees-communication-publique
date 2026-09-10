@@ -1,3 +1,27 @@
+## [0.2.2] - 2026-09-07
+
+### Ajouté
+
+**Schéma des communiqués de presse (`communiques-de-presse/schema.json`)**
+
+- `document.url` : URL absolue faisant office de canonical du document presse. Optionnel.
+
+**Schéma de la composition des Gouvernements (`gouvernements-et-ministeres/schema.json`)**
+
+- `gouvernements[].ministeres[].succede_ministere_id[]` : Identifiant unique universel du ou des ministères auxquels ce ministère succède (renommage, création, fusion, scission).
+
+### Modifié
+
+**Schéma des communiqués de presse (`communiques-de-presse/schema.json`)**
+
+- `document.contenu_pdf` : n'est plus obligatoire (retiré du tableau `required` de `document`). Les sous-champs `lien_telechargement` et `poids` restent obligatoires si l'objet est présent.
+- `document.lieu_diffusion` renommé en `document.lieu_publication`
+- `document.date_diffusion` renommé en `document.date_publication`
+
+**Licence**
+
+- Suppression de la section « Licence » (mention « Licence Ouverte 2.0/Open Licence 2.0 ») dans `README.md` et dans le `README.md` de chaque référentiel
+
 ## [0.2.1] - 2026-06-19
 
 ### Modifié
