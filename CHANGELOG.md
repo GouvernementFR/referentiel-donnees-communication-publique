@@ -1,3 +1,12 @@
+## [0.2.3] - 2026-09-11
+
+### Corrigé
+
+**Schéma des communiqués de presse (`communiques-de-presse/schema.json`, `communiques-de-presse/README.md`)**
+
+- `document.id` : description simplifiée (suppression de la précision « généré automatiquement par info.gouv.fr »)
+- `document.url` : description du tableau d'attributs corrigée dans le README (remplacement d'un texte d'exemple erroné par « URL absolue faisant office de canonical du document presse. Protocole HTTPS »)
+
 ## [0.2.2] - 2026-09-07
 
 ### Ajouté

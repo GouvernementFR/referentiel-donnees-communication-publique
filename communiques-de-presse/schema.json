@@ -81,7 +81,7 @@
                 "id": {
                     "type": "string",
                     "format": "uuid",
-                    "description": "Identifiant unique universel du communiqué. Généré automatiquement par info.gouv.fr."
+                    "description": "Identifiant unique universel du communiqué."
                 },
                 "version": {
                     "type": "integer",
