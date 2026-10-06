@@ -81,7 +81,7 @@
                                     },
                                     "description": "UUID des ministères pilotes, issus de gouvernements-et-ministeres.json."
                                 },
-                                "id_co_menants_id": {
+                                "co_menants_id": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",

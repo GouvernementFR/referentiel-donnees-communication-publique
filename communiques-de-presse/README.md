@@ -85,17 +85,17 @@ L'algorithme de checksum est **SHA-256**. Un maximum de 4 pièces jointes est so
 
 ## Markdown
 
-| Format supportés |
-| --- |
-| Heading |
-| Paragraph |
-| Line break |
+| Formats supportés        |
+|--------------------------|
+| Heading                  |
+| Paragraph                |
+| Line break               |
 | Emphasis (bold & italic) |
-| Blockquotes |
-| Lists (ul & ol) |
-| Horizontal rules |
-| Links |
-| Escaping Characters |
+| Blockquotes              |
+| Lists (ul & ol)          |
+| Horizontal rules         |
+| Links                    |
+| Escaping Characters      |
 
 ## Contact
 
