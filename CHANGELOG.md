@@ -1,3 +1,15 @@
+## [0.2.4] - 2026-10-06
+
+### Corrigé
+
+**Schéma des missions essentielles (`missions-essentielles/schema.json`)**
+
+- `id_co_menants_id` renommé en `co_menants_id` (correction du nom de la propriété)
+
+**Schéma des communiqués de presse (`communiques-de-presse/README.md`)**
+
+- Section « Markdown » : en-tête du tableau corrigé (« Formats supportés ») et mise en forme du tableau alignée
+
 ## [0.2.3] - 2026-09-11
 
 ### Corrigé
